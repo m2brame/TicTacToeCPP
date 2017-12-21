@@ -1,0 +1,106 @@
+bool isWin(char board[][3]) //checks if someone's won or it's a cat's game
+{
+	//checking rows
+	if (board[0][0] == board[0][1] && board[0][0] == board[0][2] && board[0][0] == 'X')
+	{ 
+		cout << "            You win!" <<endl;
+		return true;
+	}
+	if (board[0][0] == board[0][1] && board[0][0] == board[0][2] && board[0][0] == 'O')
+	{
+		cout << "            You lose" <<endl;
+		return true;
+	}
+
+	if (board[1][0] == board[1][1] && board[1][0] == board[1][2] && board[1][0] == 'X')
+	{
+		cout << "            You win!"<<endl;
+		return true;
+	}
+	if (board[1][0] == board[1][1] && board[1][0] == board[1][2] && board[1][0] == 'O')
+	{
+		cout << "            You lose"<<endl;
+		return true;
+	}
+
+	if (board[2][0] == board[2][1] && board[2][0] == board[2][2] && board[2][0] == 'X')
+	{
+		cout << "            You win!"<<endl;
+		return true;
+	}
+	if (board[2][0] == board[2][1] && board[2][0] == board[2][2] && board[2][0] == 'O')
+	{
+		cout << "            You lose"<<endl;
+		return true;
+	}
+	
+	//checking diagonals
+	if (board[0][0] == board[1][1] && board[0][0] == board[2][2] && board[0][0] == 'X')
+	{
+		cout << "            You win!"<<endl;
+		return true;
+	}
+	if (board[0][0] == board[1][1] && board[0][0] == board[2][2] && board[0][0] == 'O')
+	{
+		cout << "            You lose"<<endl;
+		return true;
+	}
+	
+	if (board[0][2] == board[1][1] && board[0][2] == board[2][0] && board[0][2] == 'X')
+	{
+		cout << "            You win!"<<endl;
+		return true;
+	}
+	if (board[0][2] == board[1][1] && board[0][2] == board[2][0] && board[0][2] == 'O')
+	{
+		cout << "            You lose"<<endl;
+		return true;
+	}
+
+	//checking columns
+	if (board[0][0] == board[1][0] && board[0][0] == board[2][0] && board[0][0] == 'X')
+	{
+		cout << "            You win!"<<endl;
+		return true;
+	}
+	if (board[0][0] == board[1][0] && board[0][0] == board[2][0] && board[0][0] == 'O')
+	{
+		cout << "            You lose"<<endl;
+		return true;
+	}
+
+	if (board[0][1] == board[1][1] && board[0][1] == board[2][1] && board[0][1] == 'X')
+	{
+		cout << "            You win!"<<endl;
+		return true;
+	}
+	if (board[0][1] == board[1][1] && board[0][1] == board[2][1] && board[0][1] == 'O')
+	{
+		cout << "            You lose"<<endl;
+		return true;
+	}
+
+	if (board[0][2] == board[1][2] && board[0][2] == board[2][2] && board[0][2] == 'X')
+	{
+		cout << "            You win!"<<endl;
+		return true;
+	}
+	if (board[0][2] == board[1][2] && board[0][2] == board[2][2] && board[0][2] == 'O')
+	{
+		cout << "            You lose"<<endl;
+		return true;
+	}
+
+	for(int i = 0; i<3; i++)
+	{
+		for(int j = 0; j<3; j++)
+		{
+			if(board[i][j] == '-')
+			{
+				return false;
+			}
+		}
+	}
+	cout << "     Cat's game: it's a tie!\n\n";
+	return true;
+}
